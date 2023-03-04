@@ -1,15 +1,17 @@
 <template>
   <div class="wardrobe-list">
-    <div 
-      class="wardrobe-list__item"
-      v-for="item in itemList"
-      :key="item.id"
-      @click="addSample(item)"
-    >
-      <WardrobeListItem 
-        :item="item"
-      />
-    </div>
+    <div class="wardrobe-list__block">
+      <div 
+        class="wardrobe-list__item"
+        v-for="item in itemList"
+        :key="item.id"
+        @click="addSample(item)"
+      >
+        <WardrobeListItem 
+          :item="item"
+        />
+      </div>
+    </div>  
   </div>
 </template>
 <script>
@@ -37,10 +39,14 @@
   .wardrobe-list {
     width: 100%;
     border: 3px solid silver;
-    display: flex;
-    flex-wrap: wrap;
-    min-height: 500px;
-    box-sizing: border-box;
+    min-height: 600px;
+    margin-bottom: 100px;
+
+    &__block {
+      display: flex;
+      flex-wrap: wrap;
+      box-sizing: border-box;
+    }
 
     &__item {
       width: calc(25% - 20px);
