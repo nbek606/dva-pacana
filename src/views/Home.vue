@@ -1,18 +1,33 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <Wardrobe
+      v-for="wardrobe in wardrobeList"
+      :wardrobe="wardrobe"
+      :key="wardrobe.id"
+    />
+  </div>  
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+
+import Wardrobe from '@/components/Wardrobe.vue'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    Wardrobe
+  },
+
+  computed: {
+    ...mapGetters({
+      wardrobeList: 'getWardrobeList'
+    })
   }
 }
 </script>
+<style lang="scss">
+  .home {
+    display: flex;
+  }
+</style>
