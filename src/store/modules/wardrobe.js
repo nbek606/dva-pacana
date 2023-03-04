@@ -5,7 +5,7 @@ const state = {
       title: "List1",
       type: 'list',
       sample: [],
-      max: 7,
+      max: 6,
       items: [
           {
               "id": 1,

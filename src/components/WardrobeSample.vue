@@ -1,6 +1,5 @@
 <template>
   <div class="wardrobe-sample">
-
     <div 
       v-if="sampleList.length == 0"
       class="wardrobe-sample__empty"
